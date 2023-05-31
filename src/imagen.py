@@ -64,11 +64,11 @@ class Img:
 
 if __name__ == "__main__":
     bearer = ""
-    prompt = "An oil painting of a Shiba Inu dog in a garden."
+    prompt = "3D render of a cute tropical fish in an aquarium on a dark blue background"
     demo = "BRAINSTORM"
     count = 2
     img = Imagen(bearer)
     images = img.generate(prompt, demo, count)
     for idx, image in enumerate(images):
         image.upscale()
-        image.save(f"image{idx+1}.png")
+        image.save(f"{prompt.replace(' ', '_').lower()}{idx + 1}.png")
